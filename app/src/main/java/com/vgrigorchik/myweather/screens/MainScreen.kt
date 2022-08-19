@@ -16,6 +16,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.vgrigorchik.myweather.R
 import com.vgrigorchik.myweather.ui.theme.BlueLight
 
@@ -55,6 +56,12 @@ fun MainScreen() {
                         text = "20 dskjfh 2022 13:00",
                         style = TextStyle(fontSize = 15.sp),
                         color = Color.White
+                    )
+                    AsyncImage(
+                        model = "https://cdn.weatherapi.com/weather/64x64/day/113.png",
+                        contentDescription = "image2",
+                        modifier = Modifier.size(35.dp).
+                        padding(top = 3.dp, end = 8.dp)
                     )
 
                 }
