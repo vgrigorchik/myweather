@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,7 +22,7 @@ import coil.compose.AsyncImage
 import com.vgrigorchik.myweather.R
 import com.vgrigorchik.myweather.ui.theme.BlueLight
 
-@Preview (showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun MainScreen() {
     Image(
@@ -36,7 +38,7 @@ fun MainScreen() {
             .fillMaxSize()
             .padding(5.dp),
 
-    ) {
+        ) {
         Card(
             modifier = Modifier.fillMaxWidth(),
             backgroundColor = BlueLight,
@@ -60,15 +62,62 @@ fun MainScreen() {
                     AsyncImage(
                         model = "https://cdn.weatherapi.com/weather/64x64/day/113.png",
                         contentDescription = "image2",
-                        modifier = Modifier.size(35.dp).
-                        padding(top = 3.dp, end = 8.dp)
+                        modifier = Modifier
+                            .size(35.dp)
+                            .padding(top = 3.dp, end = 8.dp)
                     )
 
                 }
+                Text(
+                    text = "Питер",
+                    style = TextStyle(fontSize = 24.sp),
+                    color = Color.White
+                )
+                Text(
+                    text = "30°С",
+                    style = TextStyle(fontSize = 65.sp),
+                    color = Color.White
+                )
+                Text(
+                    text = "Солнечно",
+                    style = TextStyle(fontSize = 16.sp),
+                    color = Color.White
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    IconButton(
+                        onClick = {
 
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_search),
+                            contentDescription = "image3",
+                            tint = Color.White
+                        )
+
+
+                    }
+                    Text(
+                        text = "30°С/35°С",
+                        style = TextStyle(fontSize = 16.sp),
+                        color = Color.White
+                    )
+                    IconButton(
+                        onClick = {
+
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_sync),
+                            contentDescription = "image4",
+                            tint = Color.White
+                        )
+                    }
+                }
             }
-
         }
-
     }
 }
